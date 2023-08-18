@@ -4,6 +4,7 @@ import eyeon from '../../assets/images/form/eye-on.svg';
 import googleSvg from '../../assets/images/form/google.svg';
 import info from '../../assets/images/form/info.svg';
 import { Stack } from '@mui/material';
+import { createAccount, login, oauthGoogle } from '../../api/Auth/appWriteAuth';
 
 const styles = {
   position: 'absolute',
@@ -19,11 +20,32 @@ const styles = {
 };
 
 export const Signup = ({ hidepass, sethidepass }) => {
+  const [userDetails, setUserDetails] = useState({});
+
+  const handleChange = (e) => {
+    setUserDetails({
+      ...userDetails,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(userDetails);
+    createAccount(userDetails)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <Stack sx={styles}>
-      <form className="form">
+      <form onSubmit={handleSubmit} className="form">
         <div className="form-heading">
-          <h3>Sign up!!</h3>
+          <h3>Sign Up!!</h3>
           <p
             style={{
               marginTop: '13px',
@@ -40,6 +62,7 @@ export const Signup = ({ hidepass, sethidepass }) => {
               type="text"
               required
               placeholder="Enter your Name"
+              onChange={handleChange}
             />
           </div>
           <div className="form-input-1">
@@ -49,6 +72,7 @@ export const Signup = ({ hidepass, sethidepass }) => {
               type="email"
               required
               placeholder="Enter your Email"
+              onChange={handleChange}
             />
           </div>
           <div className="form-input-2">
@@ -59,6 +83,7 @@ export const Signup = ({ hidepass, sethidepass }) => {
                 type={hidepass ? 'password' : 'text'}
                 required
                 placeholder="Enter Password"
+                onChange={handleChange}
               />
               <img
                 src={hidepass ? eyeoff : eyeon}
@@ -89,21 +114,49 @@ export const Signup = ({ hidepass, sethidepass }) => {
           <button className="btn form-submit" type="submit">
             Sign up
           </button>
-          <button className="btn form-google">
-            <img src={googleSvg} alt="google" />
-            <span> Sign up with Google</span>
-          </button>
         </div>
       </form>
+      <button
+        onClick={() => {
+          oauthGoogle()
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+        }}
+        className="btn form-google"
+      >
+        <img src={googleSvg} alt="google" />
+        <span> Sign up with Google</span>
+      </button>
     </Stack>
   );
 };
 
 export const Login = ({ hidepass, sethidepass }) => {
   const [password, setPassword] = useState(false);
+  const [userDetails, setUserDetails] = useState({});
+
+  const handleChange = (e) => {
+    setUserDetails({
+      ...userDetails,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(userDetails);
+    login(userDetails)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return !password ? (
     <Stack sx={styles}>
-      <form className="form">
+      <form onSubmit={handleSubmit} className="form">
         <div className="form-heading">
           <h3>Welcome Back!</h3>
           <p
@@ -122,6 +175,7 @@ export const Login = ({ hidepass, sethidepass }) => {
               type="email"
               required
               placeholder="Enter your Email"
+              onChange={handleChange}
             />
           </div>
           <div className="form-input-2">
@@ -132,6 +186,7 @@ export const Login = ({ hidepass, sethidepass }) => {
                 type={hidepass ? 'password' : 'text'}
                 required
                 placeholder="Enter Password"
+                onChange={handleChange}
               />
               <img
                 src={hidepass ? eyeoff : eyeon}
@@ -153,12 +208,19 @@ export const Login = ({ hidepass, sethidepass }) => {
           <button className="btn form-submit" type="submit">
             Sign in
           </button>
-          <button className="btn form-google">
-            <img src={googleSvg} alt="google" />
-            <span> Sign in with Google</span>
-          </button>
         </div>
       </form>
+      <button
+        onClick={() => {
+          oauthGoogle()
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+        }}
+        className="btn form-google"
+      >
+        <img src={googleSvg} alt="google" />
+        <span> Sign in with Google</span>
+      </button>
     </Stack>
   ) : (
     <ForgotPassword password={password} setPassword={setPassword} />

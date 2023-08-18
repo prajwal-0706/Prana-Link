@@ -36,10 +36,10 @@ const Navbar = () => {
           <Buttons name={'Sign up'}>
             <Signup hidepass={hidepass} sethidepass={setHidepass} />
           </Buttons> */}
-          <Buttons name={'LOGIN'}>
+          <Buttons name={'Sign Up'}>
             <Signup hidepass={hidepass} sethidepass={sethidepass} />
           </Buttons>
-          <Buttons name={'SIGNUP'}>
+          <Buttons name={'Login'}>
             <Login hidepass={hidepass} sethidepass={sethidepass} />
           </Buttons>
         </div>

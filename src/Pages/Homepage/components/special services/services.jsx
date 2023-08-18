@@ -44,7 +44,7 @@ const SpecialServiceCard = ({ url, heading, desc }) => {
             heading === 'Aura Healing' ? 'extra-class-1' : 'extra-class'
           }
         >
-          <img src={url} alt="" />
+          <img draggable="false" src={url} alt="" />
         </div>
       </div>
       <div className="special-servies-card-desc">
