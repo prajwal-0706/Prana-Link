@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="home-hero">
       <div className="home-left">
         <div className="home-heading">
-          <h1 className="home-heading-subcontent">Bringing together </h1>
+          <h1 className="home-heading-subcontent">Bringing Together </h1>
           <h1 className="home-heading-subcontent main">Spirituality and</h1>
           <h1 className="home-heading-subcontent main">HealthCare</h1>
         </div>
@@ -19,7 +19,7 @@ const Hero = () => {
           to help you with your health consultation
         </div>
         <div className="home-btns">
-          <Buttons name={'Book an Appointment'}>Prajwal</Buttons>
+          <Buttons name={'Book an Appointment'} />
         </div>
         <div className="home-numbers-container">
           {templates({ name: '200', content: 'Active Healers' })}

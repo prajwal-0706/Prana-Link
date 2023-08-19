@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import Buttons, { Login, Signup } from '../Button/button';
 import logo from '../../assets/images/Homepage/logo.svg';
 
 const Navbar = () => {
@@ -27,13 +26,15 @@ const Navbar = () => {
           <div className="navbar-link">About us</div>
         </ul>
         <div className="nav-btns">
-          <Buttons name={'LOGIN'}>
+          {/* <Buttons name={'LOGIN'}>
             <Login hidepass={hidepass} sethidepass={setHidepass} />
           </Buttons>
 
           <Buttons name={'Sign up'}>
             <Signup hidepass={hidepass} sethidepass={setHidepass} />
-          </Buttons>
+          </Buttons> */}
+          <Buttons name={'Book an Appointment'} />
+          <Buttons name={'Book an Appointment'} />
         </div>
       </div>
     </div>
