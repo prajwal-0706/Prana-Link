@@ -12,6 +12,7 @@
   justify-content: space-around;
   gap: 5rem;
   text-transform: capitalize;
+  background-color: #f4feff;
 }
 
 .navbar-left {
@@ -25,6 +26,7 @@
   font-size: 19px;
   font-weight: 800;
   background: linear-gradient(127deg, #56e0e0 0%, #007299 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -41,7 +43,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 6rem;
-  color: #c4c4c4;
+  color: #6e6e6e;
 }
 
 .nav-btns {

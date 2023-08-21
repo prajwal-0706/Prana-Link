@@ -19,7 +19,8 @@ const Hero = () => {
           to help you with your health consultation
         </div>
         <div className="home-btns">
-          <Buttons name={'Book an Appointment'} />
+          {/* <Buttons name={'Book an Appointment'} /> */}
+          <div className="home-btn">Book an Appointment</div>
         </div>
         <div className="home-numbers-container">
           {templates({ name: '200', content: 'Active Healers' })}

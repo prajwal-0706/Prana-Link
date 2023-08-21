@@ -3,17 +3,18 @@
   height: 90vh;
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .home-right {
   margin-top: 59px;
-  width: 61%;
+  width: 52%;
   height: 87%;
   position: relative;
 }
 
 .home-left {
-  padding: 55px 0px 0px 100px;
+  padding: 35px 0px 0px 100px;
   width: 60%;
 }
 
@@ -49,7 +50,7 @@
 }
 
 .home-heading-subcontent {
-  font-size: 4vw;
+  font-size: 4.7vw;
   color: #172048;
 }
 

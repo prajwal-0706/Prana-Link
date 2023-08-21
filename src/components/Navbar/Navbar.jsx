@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/images/Homepage/logo.svg';
+import Buttons from '../Button/button';
+import { Login, Signup } from '../../Pages/Signup Pages/auth';
 
 const Navbar = () => {
-  const [hidepass, setHidepass] = useState(true);
+  const [hidepass, sethidepass] = useState(true);
   return (
     <div className="navbar">
       <div className="navbar-left">
         <img
+          draggable="false"
           style={{
             width: '50px',
             objectFit: 'contain',
@@ -33,8 +36,12 @@ const Navbar = () => {
           <Buttons name={'Sign up'}>
             <Signup hidepass={hidepass} sethidepass={setHidepass} />
           </Buttons> */}
-          <Buttons name={'Book an Appointment'} />
-          <Buttons name={'Book an Appointment'} />
+          <Buttons name={'LOGIN'}>
+            <Signup hidepass={hidepass} sethidepass={sethidepass} />
+          </Buttons>
+          <Buttons name={'SIGNUP'}>
+            <Login hidepass={hidepass} sethidepass={sethidepass} />
+          </Buttons>
         </div>
       </div>
     </div>
