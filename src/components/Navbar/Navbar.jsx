@@ -12,7 +12,7 @@ const Navbar = () => {
         <img
           draggable="false"
           style={{
-            width: '50px',
+            width: '35px',
             objectFit: 'contain',
           }}
           src={logo}
