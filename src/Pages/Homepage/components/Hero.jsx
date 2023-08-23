@@ -2,7 +2,6 @@ import React from 'react';
 import './Hero.css';
 import doctorImg from '../../../assets/images/Homepage/doctor-img.png';
 import chakra from '../../../assets/images/Homepage/chakra.png';
-import Buttons from '../../../components/Button/button';
 
 const Hero = () => {
   return (
