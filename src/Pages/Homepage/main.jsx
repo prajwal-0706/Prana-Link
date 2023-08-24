@@ -9,17 +9,6 @@ import User from '../User/User';
 
 const Homepage = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" exact element={<HomePage />} />
-        <Route path="/home" element={<User />} />
-      </Routes>
-    </Router>
-  );
-};
-
-const HomePage = () => {
-  return (
     <>
       <Navbar />
       <Hero />

@@ -4,6 +4,7 @@ import NavBar from '../../components/User NavBar/NavBar';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton, InputBase } from '@mui/material';
 import HomeCard from './component/Healer List/Healer';
+import TestimonialCard from './component/Testimonials/Testimonial';
 
 const User = () => {
   const styles = {
@@ -55,6 +56,21 @@ const User = () => {
           <div className="user-healer-list">
             {[...Array(3)].map((card, index) => {
               return <HomeCard key={index} />;
+            })}
+          </div>
+        </div>
+
+        <div className="user-healer-testimonials-wrapper">
+          <div className="user-healer-testimonial-title">
+            <h1>What People Say About Us</h1>
+            <h1>Matters the Most</h1>
+          </div>
+          <div className="user-healer-testimonial-subtitle">
+            <h3>Testimonials</h3>
+          </div>
+          <div className="user-healer-testimonial-container">
+            {[...Array(3)].map((card, index) => {
+              return <TestimonialCard key={index} />;
             })}
           </div>
         </div>
