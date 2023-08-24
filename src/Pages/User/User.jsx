@@ -3,6 +3,7 @@ import './User.css';
 import NavBar from '../../components/User NavBar/NavBar';
 import SearchIcon from '@mui/icons-material/Search';
 import { IconButton, InputBase } from '@mui/material';
+import HomeCard from './component/Healer List/Healer';
 
 const User = () => {
   const styles = {
@@ -45,6 +46,16 @@ const User = () => {
             >
               <SearchIcon />
             </IconButton>
+          </div>
+        </div>
+        <div className="user-healer-container">
+          <div className="user-healer-heading">
+            Our <span>Healers</span>
+          </div>
+          <div className="user-healer-list">
+            {[...Array(3)].map((card, index) => {
+              return <HomeCard key={index} />;
+            })}
           </div>
         </div>
       </div>
