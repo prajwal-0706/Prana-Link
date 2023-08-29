@@ -197,6 +197,8 @@ const ShowAreaChart = () => {
       series={series}
       options={options}
       width="100%"
+
+      
     />
   );
 };
